@@ -1,2 +1,45 @@
-# naukri-real-stats-revealer
-Extension that reveal real Application count and View count of any job listing.
+🚀 Naukri Real Stats Revealer
+A Chrome Extension that reveals the Real Applicant Count and View Count on Naukri.com job listings, replacing the generic "100+ Applicants" label. It also calculates a Competition Score to help you decide if a job is worth applying for.
+
+✨ Features
+Real Data: Fetches the actual number of applicants (e.g., "325" instead of "100+").
+
+Views Counter: Shows how many people have viewed the job.
+
+Smart Verdict: automatically calculates competition:
+
+🟢 Green: Excellent Opportunity (<50 applicants/seat)
+
+🟠 Orange: Moderate Competition (50-200 applicants/seat)
+
+🔴 Red: Super Crowded (>200 applicants/seat)
+
+Safe & Private: Runs entirely in your browser. No data is sent to any server.
+
+📥 How to Install (Developer Mode)
+Since this is an open-source tool, you will install it manually:
+
+Download the Code:
+
+Click the green Code button above and select Download ZIP.
+
+Unzip the file into a folder.
+
+Open Chrome Extensions:
+
+Type chrome://extensions in your address bar.
+
+Enable Developer Mode:
+
+Toggle the switch in the top-right corner named "Developer mode".
+
+Load the Extension:
+
+Click the button "Load unpacked" (top left).
+
+Select the folder you just unzipped.
+
+Done! Go to any Naukri job page and refresh to see the real stats.
+
+🔒 Privacy & Safety
+This extension intercepts the API call that Naukri.com already makes to your browser. It simply reads that data and displays it on the screen. It does not make any unauthorized external calls or store your data.
