@@ -12,6 +12,19 @@ A Chrome Extension that reveals the **Real Applicant Count** and **View Count** 
     * 🔴 **Red:** Super Crowded (>200 applicants/seat)
 * **Safe & Private:** Runs entirely in your browser. No data is sent to any server.
 
+### 📸 Comparison
+
+<table>
+  <tr>
+    <th width="50%">Without Extension</th>
+    <th width="50%">With Extension</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/d6bd6b2f-06fc-45a6-9c4f-b7b157dede79" width="100%" alt="Before Extension"></td>
+    <td><img src="https://github.com/user-attachments/assets/608d7577-947e-4ec7-9999-a36571e84b52" width="100%" alt="After Extension"></td>
+  </tr>
+</table>
+
 ## 📥 How to Install (Developer Mode)
 
 Since this is an open-source tool, you will install it manually:
