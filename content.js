@@ -14,26 +14,27 @@ window.addEventListener("message", function(event) {
     if (event.source != window) return;
 
     if (event.data.type && (event.data.type === "NAUKRI_DATA_INTERCEPT")) {
-        // console.log("Naukri Revealer: Data received", event.data.payload);
         
         const data = event.data.payload;
         
         if (data && data.jobDetails) {
             const applyCount = parseInt(data.jobDetails.applyCount) || 0;
             const viewCount = parseInt(data.jobDetails.viewCount) || 0;
-            // Default to 1 vacancy if the data is missing or 0 to avoid divide-by-zero
             const vacancy = parseInt(data.jobDetails.vacancy) || 1;
             
+            // NEW: Extract Salary Label
+            // We use ?. safely in case salaryDetail is missing entirely
+            const salaryLabel = data.jobDetails.salaryDetail?.label || "Not Disclosed";
+
             // Wait slightly for the header to exist
             setTimeout(() => {
-                createStatsDashboard(applyCount, viewCount, vacancy);
+                createStatsDashboard(applyCount, viewCount, vacancy, salaryLabel);
             }, 1000);
         }
     }
 });
 
 function getVerdict(applyCount, vacancy) {
-    // Calculate competition ratio (Applicants per 1 Seat)
     const ratio = applyCount / vacancy;
 
     if (ratio < 50) {
@@ -63,7 +64,7 @@ function getVerdict(applyCount, vacancy) {
     }
 }
 
-function createStatsDashboard(applyCount, viewCount, vacancy) {
+function createStatsDashboard(applyCount, viewCount, vacancy, salaryLabel) {
     const header = document.querySelector('.styles_jd-header-title__rZwM1') || document.querySelector('header');
     
     if (header && !document.getElementById('naukri-stats-dashboard')) {
@@ -76,9 +77,9 @@ function createStatsDashboard(applyCount, viewCount, vacancy) {
         // CSS Styling
         dashboard.style.marginTop = "15px";
         dashboard.style.marginBottom = "15px";
-        dashboard.style.padding = "0"; // Reset padding for inner layout
+        dashboard.style.padding = "0"; 
         dashboard.style.backgroundColor = "#ffffff"; 
-        dashboard.style.border = `1px solid ${verdict.border}`; // Border matches verdict color
+        dashboard.style.border = `1px solid ${verdict.border}`; 
         dashboard.style.borderRadius = "8px";
         dashboard.style.fontFamily = "Roboto, sans-serif";
         dashboard.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
@@ -88,7 +89,18 @@ function createStatsDashboard(applyCount, viewCount, vacancy) {
 
         // HTML Content
         dashboard.innerHTML = `
-            <div style="padding: 12px 15px; display: flex; align-items: center; gap: 20px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+            <div style="padding: 12px 15px; display: flex; align-items: center; gap: 15px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+                
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 18px;">💰</span>
+                    <div>
+                        <div style="font-size: 10px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Salary</div>
+                        <div style="font-size: 15px; color: #0f172a; font-weight: 800;">${salaryLabel}</div>
+                    </div>
+                </div>
+
+                <div style="width: 1px; height: 25px; background-color: #cbd5e1;"></div>
+
                 <div style="display: flex; align-items: center; gap: 8px;">
                     <span style="font-size: 18px;">👁️</span>
                     <div>
