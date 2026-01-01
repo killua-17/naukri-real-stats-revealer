@@ -1,10 +1,12 @@
-# 🚀 Naukri Real Stats Revealer
+# 📊 Naukri Real Stats Revealer
 
-A Chrome Extension that reveals the **Real Applicant Count** and **View Count** on Naukri.com job listings, replacing the generic "100+ Applicants" label. It also calculates a **Competition Score** to help you decide if a job is worth applying for.
+A Chrome Extension that reveals the **Real Applicant Count**, **View Count** and **Hidden Salary** on Naukri.com job listings and job Nvites. It replaces the generic "100+ Applicants" label. It also calculates a **Competition Score** to help you decide if a job is worth applying for.
 
 ## ✨ Features
 
-* **Hidden Salary Reveal:** Displays the actual salary range (e.g., "₹6-10 Lacs") even if the recruiter has set it to "Not Disclosed".
+* **Hidden Salary Reveal:**
+    * **Job Search:** Displays the actual salary range (e.g., "₹6-10 Lacs") even if the recruiter has set it to "Not Disclosed".
+    * **Inbox (New!):** See the hidden budget for direct recruiter invites.
 * **Real Data:** Fetches the actual number of applicants (e.g., "325" instead of "100+").
 * **Views Counter:** Shows how many people have viewed the job.
 * **Smart Verdict:** Automatically calculates competition based on vacancies:
@@ -28,7 +30,6 @@ A Chrome Extension that reveals the **Real Applicant Count** and **View Count** 
 
 
 
-
 ## 📥 How to Install (Developer Mode)
 
 Since this is an open-source tool, you will install it manually:
@@ -43,7 +44,7 @@ Since this is an open-source tool, you will install it manually:
 4.  **Load the Extension:**
     * Click the button **"Load unpacked"** (top left).
     * Select the folder you just unzipped.
-5.  **Done!** Go to any Naukri job page and refresh to see the real stats.
+5.  **Done!** Go to any Naukri job page or job Nvites page to see the real stats.
 
 ## 🔒 Privacy & Safety
 
