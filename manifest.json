@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Naukri Real Job Stats",
-  "version": "1.0",
-  "description": "Reveals real applicant counts and view counts on Naukri job listings to help you decide where to apply.",
+  "version": "3.0",
+  "description": "Reveals real applicant counts, views, and hidden salaries on Job Listings AND Recruiter Inbox.",
   "permissions": [
     "scripting"
   ],
@@ -17,7 +17,10 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.naukri.com/job-listings*"],
+      "matches": [
+        "https://www.naukri.com/job-listings*", 
+        "https://www.naukri.com/mnjuser/inbox*"
+      ],
       "js": ["content.js"],
       "run_at": "document_start"
     }
