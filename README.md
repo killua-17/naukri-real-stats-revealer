@@ -5,8 +5,7 @@ A Chrome Extension that reveals the **Real Applicant Count**, **View Count** and
 ## ✨ Features
 
 * **Hidden Salary Reveal:**
-    * **Job Search:** Displays the actual salary range (e.g., "₹6-10 Lacs") even if the recruiter has set it to "Not Disclosed".
-    * **Inbox (New!):** See the hidden budget for direct recruiter invites.
+    * **Inbox :** See the hidden budget for direct recruiter invites.
 * **Real Data:** Fetches the actual number of applicants (e.g., "325" instead of "100+").
 * **Views Counter:** Shows how many people have viewed the job.
 * **Smart Verdict:** Automatically calculates competition based on vacancies:
